@@ -4,7 +4,7 @@
 
 Напишите запрос к учебной базе данных, который вернет процентное отношение общего размера всех индексов к общему размеру всех таблиц.
 ```SQL
-SELECT SUM(data_length), SUM(index_length)
+SELECT (SUM(index_length) / SUM(data_length))*100 percentage_of_indexes
 FROM INFORMATION_SCHEMA.TABLES;
 ```
 
